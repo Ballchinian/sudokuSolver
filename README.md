@@ -6,7 +6,7 @@ A Sudoku solver that fills in a grid by elimination. It looks at every empty squ
 
 It solves the way you'd do the easy ones by hand. Three checks do the work: the row check strips out every number already sitting in that row, the column check does the same down the column, and the box check walks back to the top-left corner of the square's 3×3 block and clears out everything already in there. Run a square through all three and you're left with the numbers it could still legally be.
 
-A square with a single candidate left is a certainty, so it gets filled in — and filling it in can hand you new certainties elsewhere, so the whole grid is swept again and again until a full pass changes nothing.
+A square with a single candidate left is a certainty, so it gets filled in, and filling it in can hand you new certainties elsewhere, so the whole grid is swept again and again until a full pass changes nothing.
 
 It only ever fills the dead certainties, though. It never guesses. So it'll finish any puzzle that can be cracked by elimination alone and stall on the harder ones that need a leap. If it stalls, you get the grid back with as much filled in as it could manage, rather than an error.
 
