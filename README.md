@@ -1,10 +1,10 @@
 # Sudoku
 
-A Sudoku solver that fills in a grid by elimination. It looks at every empty square, rules out anything already used in the same row, column, or 3×3 box, and whenever that leaves a square with exactly one number it could be, it drops that number in — then goes round again until nothing else can be pinned down.
+A Sudoku solver that fills in a grid by elimination. It looks at every empty square, rules out anything already used in the same row, column, or 3×3 box, and whenever that leaves a square with exactly one number it could be, it drops that number in, then goes round again until nothing else can be pinned down.
 
 ## How it works
 
-It solves the way you'd do the easy ones by hand. Three checks do the work: the row check strips out every number already sitting in that row, the column check does the same down the column, and the box check walks back to the top-left corner of the square's 3×3 block and clears out everything already in there. Run a square through all three and you're left with the numbers it could still legally be.
+It solves the way you'd do the easy ones by hand. Three checks do the work: the row check strips out every number already sitting in that row, the column check does the same down the column, and the box check walks back to the top left corner of the square's 3*3 block and clears out everything already in there. Run a square through all three and you're left with the numbers it could still legally be.
 
 A square with a single candidate left is a certainty, so it gets filled in, and filling it in can hand you new certainties elsewhere, so the whole grid is swept again and again until a full pass changes nothing.
 
